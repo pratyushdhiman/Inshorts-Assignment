@@ -6,7 +6,10 @@ from bronze import config
 
 max_retries = config.MAX_RETRIES
 
-local_folder = config.LOCAL_DATA_FOLDER
+if not config.LOCAL_DATA_FOLDER:
+    raise ValueError("LOCAL_DATA_FOLDER is not set. Please update it in bronze/config.py before running ingestion.")
+else:
+    local_folder = config.LOCAL_DATA_FOLDER
 
 os.makedirs(local_folder, exist_ok=True)
 

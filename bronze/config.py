@@ -1,5 +1,5 @@
 # Local base folder where data will be stored
-LOCAL_DATA_FOLDER = "/Users/pd_10/Desktop/gcs_data"
+LOCAL_DATA_FOLDER = ""
 
 # GCS buckets for each dataset
 DATASETS = {

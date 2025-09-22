@@ -72,10 +72,19 @@ Scripts in `bronze/` handle ingestion from GCS to local raw storage.
   - Serves as the entry point for moving raw data into the Silver layer.  
 
 **Configuration:**  
-All Bronze parameters are centralized in **`bronze/config.py`**:  
+All Bronze parameters are centralized in **`bronze/config.py`**:
+
 - `LOCAL_DATA_FOLDER` → base local directory for storing raw files.  
 - `DATASETS` → mapping of dataset names to GCS bucket paths.  
 - `MAX_RETRIES`, `WAIT_SECONDS` → retry policy for failed downloads.  
+
+⚠️ **Setup required before running ingestion:**  
+- Open `bronze/config.py` and set `LOCAL_DATA_FOLDER` to a valid path on your machine.  
+  
+Example:
+- ```python
+  LOCAL_DATA_FOLDER = "/home/username/InshortsAssignment/data"
+
 
 **Flow diagram:**  
 
